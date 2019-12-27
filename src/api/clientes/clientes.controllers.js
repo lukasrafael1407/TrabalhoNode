@@ -1,8 +1,12 @@
 import { CREATED, NO_CONTENT } from 'http-status';
 import { authenticate, getToken } from '../utils/auth.utils';
 import ClientesDAO from './clientes.dao';
+import Boom from '@hapi/boom';
+
 
 const clientesDAO = new ClientesDAO();
+const validarCpf = require('validar-cpf');
+
 console.log("Controller");
 
 export default class ClientesController {
@@ -13,7 +17,6 @@ export default class ClientesController {
 
   async detail({ params }, h) {
     const { id } = params;
-
     return await clientesDAO.findByID(id);
   }
 
@@ -28,14 +31,20 @@ export default class ClientesController {
   }
 
   async create({ payload }, h) {
-    const cliente = await clientesDAO.create(payload);
-
-    return h.response(cliente).code(CREATED);
+    console.log(payload.documento);
+    if (validarCpf(payload.documento)){
+      const cliente = await clientesDAO.create(payload);
+      return h.response(cliente).code(CREATED);
+    }else
+    {
+      throw Boom.badData("CPF Invalido!");
+    }
   }
 
   async update({ payload, params }, h) {
     const { id } = params;
 
+    
     return await clientesDAO.update(id, payload);
   }
 

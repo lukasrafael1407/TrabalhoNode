@@ -6,7 +6,7 @@ console.log("DAO");
 
 export default class ClientesDAO {
 
-  async findAll(where) {
+  async findAll(where) {    
     return Cliente.findAll({ where });
   }
 
@@ -14,7 +14,7 @@ export default class ClientesDAO {
     return getObjectOr404(Cliente,{ where: { id } });
   }
 
-  async create(data) {
+  async create(data) {    
     return Cliente.create(data);
   }
 

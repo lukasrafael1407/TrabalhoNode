@@ -1,14 +1,13 @@
 import * as Joi from '@hapi/joi';
-import isValidCpf from '@brazilian-utils/is-valid-cpf';
-
 
 console.log("Schemas");
-const params = Joi.object({
-  id: Joi.number().required()
-});
 
-const payload = Joi.object({
-  nome: Joi.string().required(),
+const params = Joi.object({    
+  id: Joi.number().required(),
+  });
+
+const payload = Joi.object({  
+  nome: Joi.string().min(3).required(),
   documento: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().min(6).required()
