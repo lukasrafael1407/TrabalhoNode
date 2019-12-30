@@ -5,9 +5,16 @@ const Pedido = instances.getModel('pedido');
 
 export default class PedidosDAO {
 
-  async findAll(params) {
+  // async findAll(params) {
+  //   return Pedido.findAll({
+  //     where: params,
+  //     include: [ 'produtos' ]
+  //   });
+  // }
+
+  async findAll(where) {
     return Pedido.findAll({
-      where: params,
+      where,
       include: [ 'produtos' ]
     });
   }
