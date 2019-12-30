@@ -9,7 +9,7 @@ export default (sequelize, dataTypes) => {
 
   Pedido.associate = models => {
     models.pedido.belongsTo(models.cliente);
-    models.pedido.hasMany(models.produto, { as: 'produtos' });
+    models.pedido.hasMany(models.pedidoproduto, { as: 'pedidoprodutos' });
   };
 
   return Pedido;

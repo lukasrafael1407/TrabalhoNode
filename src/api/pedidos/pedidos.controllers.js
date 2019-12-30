@@ -6,12 +6,12 @@ const pedidosBusiness = new PedidosBusiness();
 
 export default class PedidosController {
 
-  async list(request, h) {
-    return await pedidosBusiness.list(request);
+  async list({ params }, h) {
+    return await pedidosBusiness.list(params);
   }
 
-  async detail(request, h) {
-    return await pedidosBusiness.detail(request);
+  async detail({ params }, h) {
+    return await pedidosBusiness.detail(params);
   }
 
   async create(request, h) {
