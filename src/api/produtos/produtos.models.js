@@ -11,6 +11,8 @@ export default (sequelize, dataTypes) => {
 
   Produto.associate = models => {
     models.produto.belongsTo(models.categoria);
+    models.produto.hasMany(models.pedidoproduto, { as: 'produtopedidos' });
+    
   };
   return Produto;
 };
