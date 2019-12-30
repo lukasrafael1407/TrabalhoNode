@@ -18,5 +18,5 @@ export default (sequelize, dataTypes) => {
     cliente.password = hash;
   });
 
-  return Cliente;
+  return Cliente;  
 }
