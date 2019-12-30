@@ -7,7 +7,7 @@ const controller = new CategoriasController();
 export default [  {
     
     method: 'GET',
-    path: '/categorias/lista',
+    path: '/categorias',
     handler: controller.list,
     config: {            
       tags: ['api', 'categorias']
@@ -15,7 +15,7 @@ export default [  {
   },
   {
     method: 'GET',
-    path: '/categorias/detalhe/{id}',
+    path: '/categorias/{id}',
     handler: controller.detail,
     config: {
       tags: ['api', 'categorias'],
@@ -24,7 +24,7 @@ export default [  {
   },
   {
     method: 'POST',
-    path: '/categorias/novo',
+    path: '/categorias',
     handler: controller.create,
     config: {
       auth: false,
@@ -34,7 +34,7 @@ export default [  {
   },
   {
     method: 'PUT',
-    path: '/categorias/editar/{id}',
+    path: '/categorias/{id}',
     handler: controller.update,
     config: {
       tags: ['api', 'categorias'],
@@ -43,7 +43,7 @@ export default [  {
   },
   {
     method: 'DELETE',
-    path: '/categorias/excluir/{id}',
+    path: '/categorias/{id}',
     handler: controller.destroy,
     config: {
       tags: ['api', 'categorias'],
