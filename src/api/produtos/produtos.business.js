@@ -31,4 +31,14 @@ export default class ProdutosBusiness {
 
     return produtosDAO.destroy(id);
   }
+
+  async pesqdesc({ params }) {
+    const { descricao } = params;
+    return produtosDAO.findByDesc(descricao);
+  }
+
+  async pesqcateg({ params }) {
+    const { CategoriaId } = params;
+    return produtosDAO.findByCateg(CategoriaId);
+  }
 }

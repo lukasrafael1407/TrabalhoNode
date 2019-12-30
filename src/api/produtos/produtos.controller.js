@@ -29,4 +29,14 @@ export default class ProdutosController {
 
     return h.response().code(NO_CONTENT);
   }
+
+  async pesqdesc(request, h) {
+      
+    return await produtosBusiness.pesqdesc(request);
+  }
+
+  async pesqcateg(request, h) {
+      
+    return await produtosBusiness.pesqcateg(request);
+  }
 }
