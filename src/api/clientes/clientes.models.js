@@ -3,24 +3,20 @@ import Bcrypt from 'bcryptjs';
 
 console.log("Models");
 export default (sequelize, dataTypes) => {
-  class Clientes extends Model {}
+  class Cliente extends Model {}
 
-  Clientes.init({
+  Cliente.init({
     nome: dataTypes.STRING,
     documento: dataTypes.STRING,    
     email: dataTypes.STRING,
     password: dataTypes.STRING    
   }, { sequelize, modelName: 'cliente', tableName: 'clientes' });
 
-  //Clientes.associate = models => {
-  //  models.clientes.hasMany(models.post, { as: 'posts' });
-  //};
+  Cliente.addHook('beforeCreate', async (cliente) => {
+    const hash = await Bcrypt.hash(cliente.password, 10);
 
-  Clientes.addHook('beforeCreate', async (clientes) => {
-    const hash = await Bcrypt.hash(clientes.password, 10);
-
-    clientes.password = hash;
+    cliente.password = hash;
   });
 
-  return Clientes;
+  return Cliente;  
 }
