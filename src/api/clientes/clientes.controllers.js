@@ -33,10 +33,26 @@ export default class ClientesController {
   async create({ payload }, h) {
     console.log(payload.documento);
     if (validarCpf(payload.documento)){
-      const cliente = await clientesDAO.create(payload);
-      return h.response(cliente).code(CREATED);
-    }else
-    {
+
+      const clienteEmail = await clientesDAO.findByEmail(payload.email);
+      const clienteDocumento = await clientesDAO.findByDocumento(payload.documento);
+      
+      if (clienteEmail) {
+        
+        throw Boom.badData("Email já existe para o Cliente de Id: " + clienteEmail.id);
+
+      } else if (clienteDocumento) {
+        
+        throw Boom.badData("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
+
+      } else {
+
+        const cliente = await clientesDAO.create(payload);
+        return h.response(cliente).code(CREATED);
+
+      }
+      
+    } else {
       throw Boom.badData("CPF Invalido!");
     }
   }
@@ -45,8 +61,25 @@ export default class ClientesController {
     const { id } = params;
 
     if (validarCpf(payload.documento)){
-      return await clientesDAO.update(id, payload);
-    }else
+
+      const clienteEmail = await clientesDAO.findByEmail(payload.email);
+      const clienteDocumento = await clientesDAO.findByDocumento(payload.documento);
+
+      if ((clienteEmail) && (clienteEmail.id !== params.id)) {
+        
+        throw Boom.badData("Email já existe para o Cliente de Id: " + clienteEmail.id);
+
+      } else if ((clienteDocumento) && (clienteDocumento.id !== params.id)) {
+        
+        throw Boom.badData("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
+
+      } else {
+        
+        return await clientesDAO.update(id, payload);
+      
+      }
+
+    } else
     {
       throw Boom.badData("CPF Invalido!");
     }   

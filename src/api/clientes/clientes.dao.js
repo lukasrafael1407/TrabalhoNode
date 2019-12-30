@@ -14,6 +14,22 @@ export default class ClientesDAO {
     return getObjectOr404(Cliente,{ where: { id } });
   }
 
+  async findByEmail(email) {
+
+    const cliente = await Cliente.findOne({ where: { email }});
+
+    return cliente;
+
+  }
+
+  async findByDocumento(documento) {
+
+    const cliente = await Cliente.findOne({ where: { documento }});
+
+    return cliente;
+
+  }
+
   async create(data) {    
     return Cliente.create(data);
   }
