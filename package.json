@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "Lidia-Vendas",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -12,8 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@brazilian-utils/is-valid-cnpj": "^1.0.0-alpha.3",
-    "@brazilian-utils/is-valid-cpf": "^1.0.0-alpha.3",
     "@hapi/boom": "^8.0.1",
     "@hapi/code": "^7.0.0",
     "@hapi/hapi": "^18.4.0",
@@ -22,8 +20,6 @@
     "@hapi/lab": "^21.0.0",
     "@hapi/vision": "^5.5.4",
     "bcryptjs": "^2.4.3",
-    "cpf-cnpj-validator": "^0.1.0",
-    "cpf_cnpj": "^0.2.0",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "hapi-auth-jwt2": "^8.8.1",
@@ -31,7 +27,6 @@
     "hapi-sequelizejs": "^3.1.0",
     "hapi-swagger": "^11.1.0",
     "http-status": "^1.4.0",
-    "joi-cpf-cnpj": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.0.2",
     "sequelize": "^5.21.2",
