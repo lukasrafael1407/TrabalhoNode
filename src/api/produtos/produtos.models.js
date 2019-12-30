@@ -1,16 +1,16 @@
 import { Model } from 'sequelize';
 
 export default (sequelize, dataTypes) => {
-  class Produtos extends Model {}
+  class Produto extends Model {}
 
-  Produtos.init({
+  Produto.init({
     descricao: dataTypes.STRING,
     quantidade: dataTypes.INTEGER,
     valor: dataTypes.INTEGER
-  }, { sequelize, modelName: 'produtos', tableName: 'produtos' });
+  }, { sequelize, modelName: 'produto', tableName: 'produtos' });
 
-  Produtos.associate = models => {
-    models.produtos.belongsTo(models.categorias);
+  Produto.associate = models => {
+    models.produto.belongsTo(models.categoria);
   };
-  return Produtos;
+  return Produto;
 };

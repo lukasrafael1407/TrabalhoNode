@@ -1,7 +1,7 @@
 import { instances } from 'hapi-sequelizejs'
 import { getObjectOr404 } from '../utils/database.utils';
 
-const Produto = instances.getModel('produtos');
+const Produto = instances.getModel('produto');
 
 export default class ProdutosDAO {
 
@@ -33,4 +33,6 @@ export default class ProdutosDAO {
 
     return post.destroy();
   }
+
+
 }
