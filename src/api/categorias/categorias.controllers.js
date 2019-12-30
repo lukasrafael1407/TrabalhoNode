@@ -1,5 +1,4 @@
 import { CREATED, NO_CONTENT } from 'http-status';
-import { authenticate, getToken } from '../utils/auth.utils';
 import CategoriaDAO from './categorias.dao';
 
 const categoriaDAO = new CategoriaDAO();
@@ -16,8 +15,8 @@ export default class CategoriasController {
     }
     
       async create({ payload }, h) {    
-        const categorias = await categoriaDAO.create(payload);
-        return h.response(categorias).code(CREATED);
+        const categoria = await categoriaDAO.create(payload);
+        return h.response(categoria).code(CREATED);
       }
     
       async update({ payload, params }, h) {

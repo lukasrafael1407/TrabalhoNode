@@ -5,7 +5,7 @@ export default (sequelize, dataTypes) => {
 
     Categorias.init({
         descricao: dataTypes.STRING
-    }, {sequelize, modelName: 'categorias', tableName: 'categorias' });
+    }, {sequelize, modelName: 'categoria', tableName: 'categorias' });
 
     return Categorias;
 }

@@ -2,7 +2,7 @@ import CategoriasController from './categorias.controllers';
 import * as Schemas from './categorias.controllers';
 
 const controller = new CategoriasController();
-console.log("Route");
+//console.log("Route");
 
 export default [  {
     
