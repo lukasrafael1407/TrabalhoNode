@@ -16,8 +16,8 @@ export default class PedidosController {
   }
 
   async create({ params, payload }, h) {
-    const { postId } = params;
-    const pedido = await pedidosDAO.create({ ...payload, postId })
+    const { produtoId } = params;
+    const pedido = await pedidosDAO.create({ ...payload, produtoId })
 
     return h.response(pedido).code(CREATED);
   }
