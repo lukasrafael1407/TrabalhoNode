@@ -28,4 +28,5 @@ export default class CategoriaDAO {
 
     return Categoria.destroy();
   }
+  
 }

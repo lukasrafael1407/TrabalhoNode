@@ -29,4 +29,5 @@ export default class CategoriasController {
         await categoriaDAO.destroy(id);
         return h.response().code(NO_CONTENT);
       }
+      
 }

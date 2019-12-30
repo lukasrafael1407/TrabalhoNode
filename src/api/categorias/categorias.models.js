@@ -8,4 +8,5 @@ export default (sequelize, dataTypes) => {
     }, {sequelize, modelName: 'categoria', tableName: 'categorias' });
 
     return Categorias;
+    
 }
