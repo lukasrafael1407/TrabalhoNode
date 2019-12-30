@@ -7,7 +7,7 @@ console.log("Route");
 export default [  {
     
     method: 'GET',
-    path: '/clientes/lista',
+    path: '/clientes',
     handler: controller.list,
     config: {            
       tags: ['api', 'clientes']
@@ -15,7 +15,7 @@ export default [  {
   },
   {
     method: 'GET',
-    path: '/clientes/detalhe/{id}',
+    path: '/clientes/{id}',
     handler: controller.detail,
     config: {
       tags: ['api', 'clientes'],
@@ -24,7 +24,7 @@ export default [  {
   },
   {
     method: 'POST',
-    path: '/clientes/novo',
+    path: '/clientes',
     handler: controller.create,
     config: {
       auth: false,
@@ -44,7 +44,7 @@ export default [  {
   },
   {
     method: 'PUT',
-    path: '/clientes/editar/{id}',
+    path: '/clientes/{id}',
     handler: controller.update,
     config: {
       tags: ['api', 'clientes'],
@@ -53,7 +53,7 @@ export default [  {
   },
   {
     method: 'DELETE',
-    path: '/clientes/excluir/{id}',
+    path: '/clientes/{id}',
     handler: controller.destroy,
     config: {
       tags: ['api', 'clientes'],
