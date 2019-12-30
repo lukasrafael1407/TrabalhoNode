@@ -14,15 +14,13 @@ export default class PedidosDAO {
 
   async findAll(where) {
     return Pedido.findAll({
-      where,
-      include: [ 'produtos' ]
+      where
     });
   }
 
-  async findByID(id) {
+  async findByID(where) {
     return getObjectOr404(Pedido, {
-      where: { id },
-      include: [ 'produtos' ]
+      where
     });
   }
 

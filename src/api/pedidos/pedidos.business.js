@@ -8,10 +8,8 @@ export default class PedidosBusiness {
     return pedidosDAO.findAll(params);
   }
 
-  async detail({ params }) {
-    const { id } = params;
-
-    return pedidosDAO.findByID(id);
+  async detail({ params }, h) {
+    return await pedidosDAO.findByID(params);
   }
 
   async create({ payload, auth }) {

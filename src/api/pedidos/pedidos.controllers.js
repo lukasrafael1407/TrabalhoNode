@@ -10,8 +10,8 @@ export default class PedidosController {
     return await pedidosBusiness.list(params);
   }
 
-  async detail(request, h) {
-    return await pedidosBusiness.detail(request);
+  async detail({ params }, h) {
+    return await pedidosBusiness.detail(params);
   }
 
   async create(request, h) {

@@ -18,7 +18,7 @@ export default [
     handler: controller.detail,
     config: {
       tags: ['api', 'pedidos', 'clientes'],
-      validate: Schemas.detail
+//      validate: Schemas.detail
     }
   },
   {

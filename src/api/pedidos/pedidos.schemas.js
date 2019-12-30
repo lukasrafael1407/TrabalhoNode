@@ -1,6 +1,7 @@
 import * as Joi from '@hapi/joi';
 
 const params = Joi.object({
+  clienteId: Joi.number().required(),
   id: Joi.number().required()
 });
 
