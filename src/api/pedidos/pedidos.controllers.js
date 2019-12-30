@@ -1,31 +1,33 @@
 import { CREATED, NO_CONTENT } from 'http-status';
+import PedidosDAO from './pedidos.dao'
 
-import PedidosBusiness from './pedidos.business';
+//import PedidosBusiness from './pedidos.business';
 
-const pedidosBusiness = new PedidosBusiness();
+const pedidosDAO = new PedidosDAO();
 
 export default class PedidosController {
 
   async list({ params }, h) {
-    return await pedidosBusiness.list(params);
+    return await pedidosDAO.findAll(params);
   }
 
   async detail({ params }, h) {
-    return await pedidosBusiness.detail(params);
+    return await pedidosDAO.findByID(params);
   }
 
-  async create(request, h) {
-    const pedido = await pedidosBusiness.create(request);
+  async create({ params, payload }, h) {
+    const { postId } = params;
+    const pedido = await pedidosDAO.create({ ...payload, postId })
 
     return h.response(pedido).code(CREATED);
   }
 
-  async update(request, h) {
-    return await pedidosBusiness.update(request);
+  async update({ params, payload }, h) {
+    return await pedidosDAO.update(params, payload);
   }
 
-  async destroy(request, h) {
-    await pedidosBusiness.destroy(request);
+  async destroy({ params }, h) {
+    await pedidosDAO.destroy(params);
 
     return h.response().code(NO_CONTENT);
   }
