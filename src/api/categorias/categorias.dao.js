@@ -1,8 +1,8 @@
 import { instances } from 'hapi-sequelizejs';
 import { getObjectOr404 } from '../utils/database.utils';
 
-const Categoria = instances.getModel('categoria');
-console.log("DAO");
+const Categoria = instances.getModel('categorias');
+
 
 export default class CategoriaDAO {
 

@@ -1,12 +1,11 @@
 import * as Joi from '@hapi/joi';
 
-console.log("Schemas");
 const params = Joi.object({
   id: Joi.number().required()
 });
 
-const listcategoria = Joi.object({
-  descricao: Joi.string().required()
+const payload = Joi.object({  
+  descricao: Joi.string().min(3).required()
 })
 
 export const detail = {
@@ -14,10 +13,10 @@ export const detail = {
 };
 
 export const create = {
-    listcategoria
+  payload
 };
 
 export const update = {
   params,
-  listcategoria
+  payload
 };
