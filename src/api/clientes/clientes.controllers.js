@@ -44,8 +44,12 @@ export default class ClientesController {
   async update({ payload, params }, h) {
     const { id } = params;
 
-    
-    return await clientesDAO.update(id, payload);
+    if (validarCpf(payload.documento)){
+      return await clientesDAO.update(id, payload);
+    }else
+    {
+      throw Boom.badData("CPF Invalido!");
+    }   
   }
 
   async destroy({ params }, h) {
