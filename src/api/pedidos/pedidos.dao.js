@@ -33,7 +33,18 @@ export default class PedidosDAO {
 
   async findByID(where) {
     return getObjectOr404(Pedido, {
-      where
+      where,
+      include: [{
+        model: Produto,
+        as: 'produtos',
+        required: false,
+        attributes: ['id', 'descricao', 'quantidade', 'valor'],
+        through: {
+          // This block of code allows you to retrieve the properties of the join table
+          model: PedidoProduto,
+          as: 'pedidoProdutos',
+        }
+      }]
     });
   }
 
@@ -49,10 +60,10 @@ export default class PedidosDAO {
     return PedidoProduto.destroy({ where: { pedidoId: id } });
   }
 
-  async update(id, data) {
-    const pedido = await this.findByID(id);
+  async update(where, data) {
+    const Pedido = await this.findByID(where)
 
-    return pedido.update(data);
+    return await Pedido.update(data);
   }
 
   async destroy(id) {

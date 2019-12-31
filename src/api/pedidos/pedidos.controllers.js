@@ -1,4 +1,4 @@
-import { CREATED, NO_CONTENT } from 'http-status';
+import { CREATED, NO_CONTENT, OK } from 'http-status';
 import PedidosDAO from './pedidos.dao'
 import ProdutosDAO from '../produtos/produtos.dao';
 
@@ -48,7 +48,7 @@ export default class PedidosController {
     const pedidoProdutoGravado = pedidosDAO.createPedidoProduto(po, { w: 1 }, { returning: true });
     });
 
-    // Se tudo der certo retorna 200
+    // Se tudo der certo retorna 201
     return h.response(pedidoGravado).code(CREATED);
   }
 
@@ -59,30 +59,32 @@ export default class PedidosController {
   async update({ params, payload }, h) {
     const { id } = params;
     const { clienteId } = params;
-//    const pedido = await pedidosDAO.findByID(id);
 
-  // Remove all current associations
+  // Deleta as associações
   const retorno = pedidosDAO.deletePedidoProduto(id);
 
-  // Loop through all the items in the request
-  payload.produtos.forEach((item) => {
-  // We will use this dictionary to create a ProductOrder 
-    const po = {
-      pedidoId: id,
-      produtoId: item.id
-    };
+  const pedidoAlterado = await pedidosDAO.update(params, payload) 
 
-    // Create and save the ProductOrder
-    const pedidoProdutoGravado = pedidosDAO.createPedidoProduto(po, { w: 1 }, { returning: true });
-  });
-                                  
-  // Update the location Property
-  const pedidoAlterado = await pedidosDAO.update(id, {...payload, clienteId}); 
+    payload.produtos.forEach((item) => {
 
-  // If everything goes well respond with the updatedOrder
-  // You may also include other properties like we did in the get request
-  return respondWith(res, 200, ['Updated order'], { updatedOrder });
-}
+      // Verifica se o produto existe, se não existir retorna status 400.
+      const produto = produtosDAO.findByID(item.id);
+      if (!produto) {
+        return res.status(400);
+      }
+
+      // Seta o ID do pedido para gravar na tabela auxiliar
+      const po = {
+        pedidoId: pedidoAlterado.id,
+        produtoId: item.id,
+      }
+
+      // Grava a pedidoProduto
+      const pedidoProdutoGravado = pedidosDAO.createPedidoProduto(po, { w: 1 }, { returning: true });
+    });
+
+    return h.response(pedidoAlterado).code(OK);
+  }
 
   async destroy({ params }, h) {
     await pedidosDAO.destroy(params);
