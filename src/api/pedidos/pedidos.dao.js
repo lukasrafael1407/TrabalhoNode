@@ -45,6 +45,10 @@ export default class PedidosDAO {
     return PedidoProduto.create(data);
   }
 
+  async deletePedidoProduto(id) {
+    return PedidoProduto.destroy({ where: { pedidoId: id } });
+  }
+
   async update(id, data) {
     const pedido = await this.findByID(id);
 

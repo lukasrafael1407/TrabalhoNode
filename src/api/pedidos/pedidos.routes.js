@@ -35,8 +35,8 @@ export default [
     path: '/pedidos/{clienteId}/{id}',
     handler: controller.update,
     config: {
-      tags: ['api', 'pedidos', 'clientes'],
-      validate: Schemas.update
+      tags: ['api', 'pedidos', 'clientes', 'produtos'],
+  //    validate: Schemas.update
     }
   },
   {

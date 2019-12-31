@@ -29,32 +29,60 @@ export default class PedidosController {
     const { clienteId } = params;
     const pedidoGravado = await pedidosDAO.create({...payload, clienteId}, {w: 1}, { returning: true });
 
-  // Loop through all the items in req.products
+    // Percorre a lista de produtos
     payload.produtos.forEach((item) => {
 
-    // Search for the product with the givenId and make sure it exists. If it doesn't, respond with status 400.
+    // Verifica se o produto existe, se não existir retorna status 400.
     const produto = produtosDAO.findByID(item.id);
     if (!produto) {
       return res.status(400);
     }
 
-    // Create a dictionary with which to create the ProductOrder
+    // Seta o ID do pedido para gravar na tabela auxiliar
     const po = {
       pedidoId: pedidoGravado.id,
       produtoId: item.id,
     }
 
-    // Create and save a productOrder
+    // Grava a pedidoProduto
     const pedidoProdutoGravado = pedidosDAO.createPedidoProduto(po, { w: 1 }, { returning: true });
     });
 
-    // If everything goes well, respond with the order
+    // Se tudo der certo retorna 200
     return h.response(pedidoGravado).code(CREATED);
   }
 
+  // async update({ params, payload }, h) {
+  //   return await pedidosDAO.update(params, payload);
+  // }
+
   async update({ params, payload }, h) {
-    return await pedidosDAO.update(params, payload);
-  }
+    const { id } = params;
+    const { clienteId } = params;
+//    const pedido = await pedidosDAO.findByID(id);
+
+  // Remove all current associations
+  const retorno = pedidosDAO.deletePedidoProduto(id);
+
+  // Loop through all the items in the request
+  payload.produtos.forEach((item) => {
+  // We will use this dictionary to create a ProductOrder 
+    const po = {
+      pedidoId: id,
+      produtoId: item.id
+    };
+
+    // Create and save the ProductOrder
+    const pedidoProdutoGravado = pedidosDAO.createPedidoProduto(po, { w: 1 }, { returning: true });
+  });
+                                  
+  // Update the location Property
+  const pedidoAlterado = await pedidosDAO.update(id, {...payload, clienteId}); 
+
+  // If everything goes well respond with the updatedOrder
+  // You may also include other properties like we did in the get request
+  return respondWith(res, 200, ['Updated order'], { updatedOrder });
+}
 
   async destroy({ params }, h) {
     await pedidosDAO.destroy(params);
