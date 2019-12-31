@@ -12,13 +12,15 @@ export default class ProdutosDAO {
   async findAll(params) {
     
     return Produto.findAll({
-      where: params
+      where: params,
+      include: [ 'categoria' ]
     });
   }
 
   async findByID(id) {
     return getObjectOr404(Produto, {
-      where: { id }
+      where: { id },
+      include: [ 'categoria' ]
     });
   }
 
@@ -41,12 +43,18 @@ export default class ProdutosDAO {
   async findByDesc(nome) {
     const pesquisa = '%' + nome + '%';
 
-    return Produto.findAll({where: { descricao: { [Op.like]: pesquisa}}});
+    return Produto.findAll({
+      where: { descricao: { [Op.like]: pesquisa}},
+      include: [ 'categoria' ]
+    });
 
   }
 
   async findByCateg(nome) {
-      return Produto.findAll({where: { categoriaId: nome}});
+      return Produto.findAll({
+        where: { categoriaId: nome },
+        include: [ 'categoria' ]
+      });
 
   }
 }
