@@ -2,7 +2,6 @@ import { instances } from 'hapi-sequelizejs';
 import { getObjectOr404 } from '../utils/database.utils';
 
 const Cliente = instances.getModel('cliente');
-console.log("DAO");
 
 export default class ClientesDAO {
 

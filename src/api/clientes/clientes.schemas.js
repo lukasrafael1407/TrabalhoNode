@@ -1,7 +1,5 @@
 import * as Joi from '@hapi/joi';
 
-console.log("Schemas");
-
 const params = Joi.object({    
   id: Joi.number().required(),
   });

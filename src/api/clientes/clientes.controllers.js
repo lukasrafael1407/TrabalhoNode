@@ -3,11 +3,8 @@ import { authenticate, getToken } from '../utils/auth.utils';
 import ClientesDAO from './clientes.dao';
 import Boom from '@hapi/boom';
 
-
 const clientesDAO = new ClientesDAO();
 const validarCpf = require('validar-cpf');
-
-console.log("Controller");
 
 export default class ClientesController {
 
@@ -30,8 +27,7 @@ export default class ClientesController {
     return { cliente, token };
   }
 
-  async create({ payload }, h) {
-    console.log(payload.documento);
+  async create({ payload }, h) {    
     if (validarCpf(payload.documento)){
 
       const clienteEmail = await clientesDAO.findByEmail(payload.email);

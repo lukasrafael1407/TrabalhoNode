@@ -1,7 +1,6 @@
 import { Model } from 'sequelize';
 import Bcrypt from 'bcryptjs';
 
-console.log("Models");
 export default (sequelize, dataTypes) => {
   class Cliente extends Model {}
 

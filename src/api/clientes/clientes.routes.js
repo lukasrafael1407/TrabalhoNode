@@ -2,7 +2,6 @@ import ClientesController from './clientes.controllers';
 import * as Schemas from './clientes.schemas';
 
 const controller = new ClientesController();
-console.log("Route");
 
 export default [  {
     
