@@ -2,6 +2,7 @@ import { instances } from 'hapi-sequelizejs'
 import { getObjectOr404 } from '../utils/database.utils';
 
 const Pedido = instances.getModel('pedido');
+const PedidoProduto = instances.getModel('pedidoproduto');
 
 export default class PedidosDAO {
 
@@ -26,6 +27,10 @@ export default class PedidosDAO {
 
   async create(data) {
     return Pedido.create(data);
+  }
+
+  async createPedidoProduto(data) {
+    return PedidoProduto.create(data);
   }
 
   async update(id, data) {

@@ -9,7 +9,12 @@ export default (sequelize, dataTypes) => {
 
   Pedido.associate = models => {
     models.pedido.belongsTo(models.cliente);
-    models.pedido.hasMany(models.pedidoproduto, { as: 'pedidoprodutos' });
+    models.pedido.belongsToMany(models.produto, {
+      through: 'pedidoproduto',
+      as: 'produtos',
+      foreignKey: 'pedidoId',
+      otherKey: 'produtoId'
+    });
   };
 
   return Pedido;

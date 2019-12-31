@@ -11,7 +11,12 @@ export default (sequelize, dataTypes) => {
 
   Produto.associate = models => {
     models.produto.belongsTo(models.categoria, {as: 'categoria'});
-    models.produto.hasMany(models.pedidoproduto, { as: 'produtopedidos' });
+    models.produto.belongsToMany(models.pedido, {
+      through: 'pedidoproduto',
+      as: 'pedidos',
+      foreignKey: 'produtoId',
+      otherKey: 'pedidoId'
+    });
     
   };
   return Produto;
