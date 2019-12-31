@@ -26,7 +26,8 @@ export default class PedidosController {
 
   async create({ params, payload }, h) {
 
-    const pedidoGravado = await pedidosDAO.create(payload, {w: 1}, { returning: true });
+    const { clienteId } = params;
+    const pedidoGravado = await pedidosDAO.create({...payload, clienteId}, {w: 1}, { returning: true });
 
   // Loop through all the items in req.products
     payload.produtos.forEach((item) => {
