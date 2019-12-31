@@ -1,6 +1,10 @@
 import { instances } from 'hapi-sequelizejs'
 import { getObjectOr404 } from '../utils/database.utils';
 
+import { Sequelize } from 'sequelize';
+
+const Op = Sequelize.Op;
+
 const Produto = instances.getModel('produto');
 
 export default class ProdutosDAO {
@@ -34,5 +38,15 @@ export default class ProdutosDAO {
     return post.destroy();
   }
 
+  async findByDesc(nome) {
+    const pesquisa = '%' + nome + '%';
 
+    return Produto.findAll({where: { descricao: { [Op.like]: pesquisa}}});
+
+  }
+
+  async findByCateg(nome) {
+      return Produto.findAll({where: { categoriaId: nome}});
+
+  }
 }

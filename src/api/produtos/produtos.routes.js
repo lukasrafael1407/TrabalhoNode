@@ -7,15 +7,18 @@ export default [
   {
     method: 'GET',
     path: '/produtos',
-    handler: controller.list
-    
+    handler: controller.list,
+    config: {
+      tags: ['api', 'produtos']
+    }
   },
   {
     method: 'GET',
     path: '/produtos/{id}',
     handler: controller.detail,
     config: {
-      validate: Schemas.detail
+      validate: Schemas.detail,
+      tags: ['api', 'produtos']
     }
   },
   {
@@ -23,7 +26,8 @@ export default [
     path: '/produtos',
     handler: controller.create,
     config: {
-      validate: Schemas.create
+      validate: Schemas.create,
+      tags: ['api', 'produtos']
     }
   },
   {
@@ -31,7 +35,8 @@ export default [
     path: '/produtos/{id}',
     handler: controller.update,
     config: {
-      validate: Schemas.update
+      validate: Schemas.update,
+      tags: ['api', 'produtos']
     }
   },
   {
@@ -39,7 +44,26 @@ export default [
     path: '/produtos/{id}',
     handler: controller.destroy,
     config: {
-      validate: Schemas.detail
+      validate: Schemas.detail,
+      tags: ['api', 'produtos']
+    }
+  },
+  {
+    method: 'GET',
+    path: '/produtos/descricao/{descricao}',
+    handler: controller.pesqdesc,
+    config: {
+      
+      tags: ['api', 'produtos']
+    }
+  },
+  {
+    method: 'GET',
+    path: '/produtos/categoria/{CategoriaId}',
+    handler: controller.pesqcateg,
+    config: {
+      
+      tags: ['api', 'produtos']
     }
   }
 ];
