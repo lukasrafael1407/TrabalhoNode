@@ -23,7 +23,7 @@ const DATABASES = {
       logging: Env.DEBUG,
       define: {
         freezeTableName: true,
-        paranoid: true
+        paranoid: false
       }
     })
   },
