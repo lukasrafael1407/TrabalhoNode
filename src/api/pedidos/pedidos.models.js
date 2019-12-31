@@ -13,7 +13,8 @@ export default (sequelize, dataTypes) => {
       through: 'pedidoproduto',
       as: 'produtos',
       foreignKey: 'pedidoId',
-      otherKey: 'produtoId'
+      otherKey: 'produtoId',
+      onDelete: 'cascade'
     });
   };
 
