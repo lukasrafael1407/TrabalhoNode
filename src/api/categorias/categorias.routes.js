@@ -27,7 +27,6 @@ export default [  {
     path: '/categorias',
     handler: controller.create,
     config: {
-      auth: false,
       tags: ['api', 'categorias'],
       validate: Schemas.create
     }
