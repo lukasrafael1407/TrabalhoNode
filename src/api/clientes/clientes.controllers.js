@@ -35,11 +35,11 @@ export default class ClientesController {
       
       if (clienteEmail) {
         
-        throw Boom.badData("Email já existe para o Cliente de Id: " + clienteEmail.id);
+        throw Boom.badRequest("Email já existe para o Cliente de Id: " + clienteEmail.id);
 
       } else if (clienteDocumento) {
         
-        throw Boom.badData("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
+        throw Boom.badRequest("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
 
       } else {
 
@@ -49,7 +49,7 @@ export default class ClientesController {
       }
       
     } else {
-      throw Boom.badData("CPF Invalido!");
+      throw Boom.badRequest("CPF Invalido!");
     }
   }
 
@@ -63,11 +63,11 @@ export default class ClientesController {
 
       if ((clienteEmail) && (clienteEmail.id !== params.id)) {
         
-        throw Boom.badData("Email já existe para o Cliente de Id: " + clienteEmail.id);
+        throw Boom.badRequest("Email já existe para o Cliente de Id: " + clienteEmail.id);
 
       } else if ((clienteDocumento) && (clienteDocumento.id !== params.id)) {
         
-        throw Boom.badData("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
+        throw Boom.badRequest("CPF já existe para o Cliente de Id: " + clienteDocumento.id);
 
       } else {
         
@@ -77,7 +77,7 @@ export default class ClientesController {
 
     } else
     {
-      throw Boom.badData("CPF Invalido!");
+      throw Boom.badRequest("CPF Invalido!");
     }   
   }
 
