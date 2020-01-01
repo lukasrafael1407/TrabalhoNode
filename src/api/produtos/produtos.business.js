@@ -32,8 +32,8 @@ export default class ProdutosBusiness {
     return produtosDAO.destroy(id);
   }
 
-  async pesqdesc({ params }) {
-    const { descricao } = params;
+  async pesqdesc(descricao) {
+    
     return produtosDAO.findByDesc(descricao);
   }
 
@@ -41,4 +41,8 @@ export default class ProdutosBusiness {
     const { CategoriaId } = params;
     return produtosDAO.findByCateg(CategoriaId);
   }
+
+  async pesqcateg2(CategoriaId) {
+    return produtosDAO.findByCateg(CategoriaId);
+  }  
 }

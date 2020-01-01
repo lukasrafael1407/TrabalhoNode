@@ -50,10 +50,10 @@ export default [
   },
   {
     method: 'GET',
-    path: '/produtos/descricao/{descricao}',
+    path: '/produtos/descricao',
     handler: controller.pesqdesc,
     config: {
-      
+      validate: Schemas.pesquisa,
       tags: ['api', 'produtos']
     }
   },
@@ -63,6 +63,15 @@ export default [
     handler: controller.pesqcateg,
     config: {
       
+      tags: ['api', 'produtos']
+    }
+  },
+  {
+    method: 'GET',
+    path: '/produtos/categoria',
+    handler: controller.pesqcateg2,
+    config: {
+      validate: Schemas.pesqcateg,
       tags: ['api', 'produtos']
     }
   }

@@ -8,6 +8,10 @@ const pesq = Joi.object({
   descricao: Joi.string().required()
 });
 
+const pesqcat = Joi.object({
+  categoriaId: Joi.number().required()
+});
+
 const payload = Joi.object({
   descricao: Joi.string().min(3).required(),
   quantidade: Joi.number().required(),
@@ -29,5 +33,10 @@ export const update = {
 };
 
 export const pesquisa = {
-  pesq
+  query: pesq
+};
+
+
+export const pesqcateg = {
+  query: pesqcat
 };

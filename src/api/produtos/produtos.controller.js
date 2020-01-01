@@ -31,12 +31,18 @@ export default class ProdutosController {
   }
 
   async pesqdesc(request, h) {
-      
-    return await produtosBusiness.pesqdesc(request);
+    const { descricao } = request.query;
+    return await produtosBusiness.pesqdesc(descricao);
   }
 
   async pesqcateg(request, h) {
       
     return await produtosBusiness.pesqcateg(request);
   }
+
+  async pesqcateg2(request, h) {
+    const { categoriaId } = request.query;
+    return await produtosBusiness.pesqcateg2(categoriaId);
+  }
+
 }
