@@ -1,0 +1,1028 @@
+{
+	"info": {
+		"_postman_id": "f6167af1-88d7-472b-8491-38cb1dfca731",
+		"name": "Exercicio Node js",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:3000/clientes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Everson\",\n\t\"email\": \"teste@teste.com\",\n\t\"password\": \"123456\",\n\t\"documento\": \"56303017053\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes"
+					]
+				},
+				"description": "Cadastra clientes"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes"
+					]
+				},
+				"description": "Lista clientes"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/clientes/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes",
+						"1"
+					]
+				},
+				"description": "Detalhe cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/clientes/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes",
+						"1"
+					]
+				},
+				"description": "Excluir cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/clientes/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Everson Pereira\",\n\t\"email\": \"teste@teste.com\",\n\t\"password\": \"123456\",\n\t\"documento\": \"56303017053\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes",
+						"1"
+					]
+				},
+				"description": "Atualiza cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/clientes/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Everson\",\n\t\"email\": \"teste@teste.com\",\n\t\"password\": \"123456\",\n\t\"documento\": \"56303017053\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/clientes/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clientes",
+						"login"
+					]
+				},
+				"description": "Efetua login"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/categorias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Material de escritorio\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/categorias",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"categorias"
+					]
+				},
+				"description": "Cadastra categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/categorias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/categorias",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"categorias"
+					]
+				},
+				"description": "Lista categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/categorias/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/categorias/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"categorias",
+						"1"
+					]
+				},
+				"description": "Detalhe categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/categorias/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/categorias/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"categorias",
+						"1"
+					]
+				},
+				"description": "Exclui categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/categorias/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Equipamento de escritorio\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/categorias/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"categorias",
+						"1"
+					]
+				},
+				"description": "Atualiza categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Teclado\",\n\t\"quantidade\": 20,\n\t\"valor\": 25,\n\t\"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				},
+				"description": "Cadastra produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Teclado\",\n\t\"quantidade\": 30,\n\t\"valor\": 25,\n\t\"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos",
+						"1"
+					]
+				},
+				"description": "Altera produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos",
+						"1"
+					]
+				},
+				"description": "Detalhe produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos",
+						"1"
+					]
+				},
+				"description": "Exclui produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1Nzc3OTU3MTksImV4cCI6MTU3Nzg4MjExOX0.X7AjuNaZrEnRuEKqfT1V5lwsQYrtmA-Kq3ZLFenid9U"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Mouse\",\n\t\"quantidade\": 40,\n\t\"valor\": 15,\n\t\"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				},
+				"description": "Cadastra segundo produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Computador\",\n\t\"quantidade\": 10,\n\t\"valor\": 1570,\n\t\"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				},
+				"description": "Cadastra segundo produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/produtos 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descricao\": \"Monitor\",\n\t\"quantidade\": 10,\n\t\"valor\": 350,\n\t\"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/produtos",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				},
+				"description": "Cadastra segundo produto"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/pedidos/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"produtos\": [\n\t\t{\n\t\t\t\"id\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 2\n\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/pedidos/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"1"
+					]
+				},
+				"description": "Cadastra pedido para cliente 1"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/pedidos/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/pedidos/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"1"
+					]
+				},
+				"description": "Lista pedidos do cliente 1"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/pedidos/1/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"produtos\": [\n\t\t{\n\t\t\t\"id\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 4\n\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/pedidos/1/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"1",
+						"1"
+					]
+				},
+				"description": "Altera pedidos do cliente 1"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/pedidos/1/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/pedidos/1/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"1",
+						"1"
+					]
+				},
+				"description": "Detalhe pedido cliente 1"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:3000/pedidos/1/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE1NzgwMDM4NTYsImV4cCI6MTU3ODA5MDI1Nn0.7v5SwD92w5Mh8LMmoQDJYAXeu928H1yMiWhs9CqxUxY"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/pedidos/1/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"1",
+						"1"
+					]
+				},
+				"description": "Exclui pedido"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
