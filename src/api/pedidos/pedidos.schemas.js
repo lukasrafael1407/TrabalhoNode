@@ -6,7 +6,6 @@ const params = Joi.object({
 });
 
 const payload = Joi.object({
-  valor: Joi.number().required(),
   produtos: Joi.array().min(1).items(
     Joi.object({
       id: Joi.number()
