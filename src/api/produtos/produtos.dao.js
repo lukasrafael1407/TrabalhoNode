@@ -3,6 +3,8 @@ import { getObjectOr404 } from '../utils/database.utils';
 
 import { Sequelize } from 'sequelize';
 
+import Boom from '@hapi/boom';
+
 const Op = Sequelize.Op;
 
 const Produto = instances.getModel('produto');
@@ -23,6 +25,8 @@ export default class ProdutosDAO {
       include: [ 'categoria' ]
     });
   }
+
+
 
   async create(data) {
     return Produto.create(data);
@@ -57,4 +61,19 @@ export default class ProdutosDAO {
       });
 
   }
+
+  async atualizaEstoque(id) {  
+    
+    const produto2 = await Produto.findOne({where: { id }});
+    
+    if (produto2.quantidade > 0){
+
+        produto2.quantidade = produto2.quantidade - 1;
+
+        return this.update(id, produto2.dataValues);
+    } else {
+      throw Boom.badRequest("Produto não encontrado no estoque. Quantidade = ZERO!");
+    }
+  }
+
 }

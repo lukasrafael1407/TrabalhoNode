@@ -59,15 +59,6 @@ export default [
   },
   {
     method: 'GET',
-    path: '/produtos/categoria/{CategoriaId}',
-    handler: controller.pesqcateg,
-    config: {
-      
-      tags: ['api', 'produtos']
-    }
-  },
-  {
-    method: 'GET',
     path: '/produtos/categoria',
     handler: controller.pesqcateg2,
     config: {
