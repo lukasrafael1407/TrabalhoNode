@@ -7,7 +7,7 @@ const params = Joi.object({
 
 const payload = Joi.object({  
   descricao: Joi.string().min(3).required()
-})
+}).label('Categoria')
 
 export const detail = {
   params
