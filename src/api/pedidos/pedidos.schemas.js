@@ -11,7 +11,7 @@ const payload = Joi.object({
       id: Joi.number()
     })
   ).required()
-});
+}).label("Pedido");
 
 export const detail = {
   params
