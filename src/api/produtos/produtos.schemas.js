@@ -17,7 +17,7 @@ const payload = Joi.object({
   quantidade: Joi.number().required(),
   valor: Joi.number().required(),
   categoriaId: Joi.number().required()
-});
+}).label('Produto');
 
 export const detail = {
   params
