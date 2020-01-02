@@ -1,5 +1,5 @@
 import CategoriasController from './categorias.controllers';
-import * as Schemas from './categorias.controllers';
+import * as Schemas from './categorias.schemas';
 
 const controller = new CategoriasController();
 
@@ -17,8 +17,8 @@ export default [  {
     path: '/categorias/{id}',
     handler: controller.detail,
     config: {
-      tags: ['api', 'categorias'],
-      validate: Schemas.detail
+      validate: Schemas.detail,
+      tags: ['api', 'categorias']
     }
   },
   {
