@@ -49,7 +49,7 @@ OS X e Linux:
 >http://localhost:3000/documentation
 
 - Como fazer requests para a api
-Para utilizar importe a coleção em uma instalação do Postman, disponível em: https://github.com/lukasrafael1407/TrabalhoNode/tree/master/Documentation/Exercicio Node js.postman_collection.json
+Para utilizar importe a coleção em uma instalação do Postman, disponível em: https://github.com/lukasrafael1407/TrabalhoNode/tree/master/Documentation/Node_js.postman_collection.json
 
 ## Desenvolvimento
 
